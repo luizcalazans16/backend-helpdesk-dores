@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response } from 'express';
-import * as firebase from 'firebase-admin'
+import * as firebase from 'firebase-admin';
 import * as serviceAccount from './firebaseAccountService.json'
 
 

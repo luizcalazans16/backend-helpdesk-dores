@@ -2,8 +2,8 @@
 import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PreAuthMiddleware } from './auth/preAuthMiddleware';
-import { TicketsModule } from './tickets/tickets.module';
+import { PreAuthMiddleware } from './common/auth/preAuthMiddleware';
+import { TicketsModule } from './core/tickets/tickets.module';
 
 @Module({
   imports: [TicketsModule],
