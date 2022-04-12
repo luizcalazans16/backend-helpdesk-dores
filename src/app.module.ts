@@ -3,9 +3,10 @@ import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/c
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PreAuthMiddleware } from './auth/preAuthMiddleware';
+import { TicketsModule } from './tickets/tickets.module';
 
 @Module({
-  imports: [],
+  imports: [TicketsModule],
   controllers: [AppController],
   providers: [AppService],
 })
