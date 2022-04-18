@@ -4,9 +4,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PreAuthMiddleware } from './common/auth/preAuthMiddleware';
 import { TicketsModule } from './core/tickets/tickets.module';
+import { LoginModule } from './core/login/login.module';
 
 @Module({
-  imports: [TicketsModule],
+  imports: [TicketsModule, LoginModule],
   controllers: [AppController],
   providers: [AppService],
 })
