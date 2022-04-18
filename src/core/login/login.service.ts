@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Injectable, Logger } from '@nestjs/common';
 import { LoginRepository } from './repository/login.repository';
+import { LoginRequest } from './dto/loginRequest';
 
 @Injectable()
 export class LoginService {
@@ -11,6 +12,22 @@ export class LoginService {
     private readonly loginRepository: LoginRepository
   ) {
     this.logger = new Logger(this.constructor.name)
+  }
+
+  async attemptLogin(req: LoginRequest): Promise<any> {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const firebase =  require('firebase');
+    firebase.signInWithEmailAndPassword(req.email, req.password)
+    .then((e, res) => {
+      firebase.auth().currentUser().getIdToken(true)
+      .then((idToken) => {
+        res.json({idToken});
+      })
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+
   }
 
   findAll() {
