@@ -15,9 +15,8 @@ type Route struct {
 }
 
 func Config(r *mux.Router) *mux.Router {
-	routes := routeProduct
-	routes := append(routes, routeLogin)
-	routes := append(routes, routeUser...)
+	routes := routeTicket
+	routes = append(routes, routeLogin)
 
 	for _, route := range routes {
 		if route.RequireAuthentication {
@@ -25,7 +24,8 @@ func Config(r *mux.Router) *mux.Router {
 				middleware.Logger(middleware.Auth(route.Function)),
 			).Methods(route.Method)
 		} else {
-			r.HandleFunc(route.URI, middleware.Logger(route.Function)).Methods(route.Function)
+			r.HandleFunc(route.URI, middleware.Logger(route.Function)).Methods(route.Method)
 		}
 	}
+	return r
 }

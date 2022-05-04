@@ -12,17 +12,17 @@ import (
 	jwt "github.com/dgrijalva/jwt-go"
 )
 
-func generateToken(userId int64) (string, error) {
+func GenerateToken(userId int64) (string, error) {
 	permissions := jwt.MapClaims{}
 	permissions["authorized"] = true
 	permissions["exp"] = time.Now().Add(time.Hour * 6).Unix()
 	permissions["userId"] = userId
 
-	token := jwt.NewWithClaims(jwt.SigningMethodH256, permissions)
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, permissions)
 	return token.SignedString([]byte(config.SecretKey))
 }
 
-func validateToken(r *http.Request) error {
+func ValidateToken(r *http.Request) error {
 	tokenString := extractToken(r)
 	token, err := jwt.Parse(tokenString, returnKeyVericate)
 	if err != nil {

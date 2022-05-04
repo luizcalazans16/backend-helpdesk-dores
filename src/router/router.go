@@ -1,11 +1,13 @@
 package router
 
 import (
+	"backend-helpdesk-dores/src/router/routes"
+
 	"github.com/gorilla/mux"
 )
 
-func generateRoute() *mux.Router {
+func GenerateRoute() *mux.Router {
 	r := mux.NewRouter()
 
-	return route.Config(r)
+	return routes.Config(r)
 }

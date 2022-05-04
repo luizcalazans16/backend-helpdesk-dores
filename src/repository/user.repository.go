@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"backend-helpdesk-dores/src/model"
 	"database/sql"
 )
 
@@ -14,4 +15,9 @@ func NewUserRepository(db *sql.DB) *User {
 
 func (repository User) search() {
 
+}
+
+func (repository User) SearchEmail(email string) (model.User, error) {
+	var user model.User
+	return user, nil
 }

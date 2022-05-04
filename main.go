@@ -1,23 +1,18 @@
 package main
 
 import (
-	"backend-helpdesk-dores/api"
-	"backend-helpdesk-dores/config"
-
-	"github.com/gin-gonic/gin"
+	"backend-helpdesk-dores/src/config"
+	"backend-helpdesk-dores/src/router"
+	"fmt"
+	"log"
+	"net/http"
 )
 
 func main() {
-	r := gin.Default()
+	config.LoadConfig()
 
-	db := config.CreateDatabase()
+	fmt.Println("API running")
+	r := router.GenerateRoute()
 
-	r.Use(func(c *gin.Context) {
-		c.Set("db", db)
-	})
-
-	r.GET("/artist", api.FindArtists)
-	r.POST("/artist", api.CreateArtist)
-
-	r.Run(":5000")
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", config.Port), r))
 }
