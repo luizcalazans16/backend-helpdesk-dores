@@ -1,8 +1,8 @@
 package main
 
 import (
-	"backend-helpdesk-dores/src/config"
-	"backend-helpdesk-dores/src/router"
+	"backend-helpdesk-dores/config"
+	"backend-helpdesk-dores/router"
 	"fmt"
 	"log"
 	"net/http"

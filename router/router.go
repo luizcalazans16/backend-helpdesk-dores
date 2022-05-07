@@ -1,7 +1,7 @@
 package router
 
 import (
-	"backend-helpdesk-dores/src/router/routes"
+	"backend-helpdesk-dores/router/routes"
 
 	"github.com/gorilla/mux"
 )

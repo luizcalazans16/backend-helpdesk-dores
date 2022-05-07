@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"backend-helpdesk-dores/src/model"
+	"backend-helpdesk-dores/domain/model"
 	"database/sql"
 )
 

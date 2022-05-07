@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"backend-helpdesk-dores/src/middleware"
+	"backend-helpdesk-dores/middleware"
 	"net/http"
 
 	"github.com/gorilla/mux"

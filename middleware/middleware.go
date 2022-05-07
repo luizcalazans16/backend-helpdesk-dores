@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"backend-helpdesk-dores/src/authentication"
-	"backend-helpdesk-dores/src/response"
+	"backend-helpdesk-dores/authentication"
+	"backend-helpdesk-dores/response"
 	"log"
 	"net/http"
 )

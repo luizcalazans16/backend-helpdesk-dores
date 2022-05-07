@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"backend-helpdesk-dores/src/controller"
+	"backend-helpdesk-dores/controller"
 	"net/http"
 )
 
