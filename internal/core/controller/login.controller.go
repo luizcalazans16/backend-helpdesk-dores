@@ -1,12 +1,12 @@
 package controller
 
 import (
-	"backend-helpdesk-dores/authentication"
-	"backend-helpdesk-dores/config/database"
-	"backend-helpdesk-dores/config/security"
-	"backend-helpdesk-dores/model"
-	"backend-helpdesk-dores/repository"
-	"backend-helpdesk-dores/response"
+	"backend-helpdesk-dores/internal/config/authentication"
+	"backend-helpdesk-dores/internal/config/security"
+	"backend-helpdesk-dores/internal/core/model"
+	"backend-helpdesk-dores/internal/core/model/response"
+	"backend-helpdesk-dores/internal/core/repository"
+	"backend-helpdesk-dores/internal/database"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"

@@ -1,7 +1,7 @@
 package database
 
 import (
-	"backend-helpdesk-dores/config"
+	"backend-helpdesk-dores/internal/config"
 	"database/sql"
 
 	_ "github.com/go-sql-driver/mysql"

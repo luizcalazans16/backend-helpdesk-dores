@@ -1,7 +1,7 @@
 package authentication
 
 import (
-	"backend-helpdesk-dores/config"
+	"backend-helpdesk-dores/internal/config"
 	"errors"
 	"fmt"
 	"net/http"
