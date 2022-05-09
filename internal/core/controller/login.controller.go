@@ -13,6 +13,9 @@ import (
 	"net/http"
 )
 
+type LoginController struct {
+}
+
 func Login(w http.ResponseWriter, r *http.Request) {
 	bodyRequest, err := ioutil.ReadAll(r.Body)
 
