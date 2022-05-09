@@ -9,7 +9,7 @@ type UserRepository struct {
 }
 
 func NewUserRepository(db *sql.DB) *UserRepository {
-	return &UserRepository{db}
+	return &UserRepository{}
 }
 
 func (repository UserRepository) search() {
