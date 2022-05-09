@@ -7,18 +7,14 @@ import (
 	"backend-helpdesk-dores/internal/core/model/response"
 	"backend-helpdesk-dores/internal/core/service"
 	"backend-helpdesk-dores/internal/database"
-	"context"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 )
 
-type LoginController struct {
-	loginService *service.LoginService
-}
-
-func (l *LoginController) Login(ctx context.Context, w http.ResponseWriter, r *http.Request) {
+func Login(w http.ResponseWriter, r *http.Request) {
+	var loginService *service.LoginService
 	bodyRequest, err := ioutil.ReadAll(r.Body)
 
 	if err != nil {
@@ -39,7 +35,7 @@ func (l *LoginController) Login(ctx context.Context, w http.ResponseWriter, r *h
 
 	defer db.Close()
 
-	useOfDatabase, err := l.loginService.SearchEmail(ctx, user.Email)
+	useOfDatabase, err := loginService.SearchEmail(user.Email)
 
 	if err != nil {
 		response.Error(w, http.StatusInternalServerError, err)
